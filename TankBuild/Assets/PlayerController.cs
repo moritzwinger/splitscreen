@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
+    public bool hasFlag = false;
     // Animator anim;
     SpriteRenderer render;
     Rigidbody2D rigid;
