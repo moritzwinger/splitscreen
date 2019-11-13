@@ -13,8 +13,12 @@ public class Bullet : MonoBehaviour
         Destroy(effect, 1f);
         //destroy bullet
         Destroy(gameObject);
-        // deduct hp from object that has been hit
-        collision.gameObject.GetComponent<PlayerStats>().health -= 5;
+
+        // deduct hp from player that has been hit
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerStats>().health -= 5;
+        }
     }
 }
 
