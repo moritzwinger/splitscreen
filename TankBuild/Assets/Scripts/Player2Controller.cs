@@ -23,8 +23,8 @@ public class Player2Controller : MonoBehaviour
     void Update()
     {
         // movement 
-        transform.Rotate(new Vector3(0, 0, -Input.GetAxisRaw("Horizontal2") * moveSpeed * 20 * Time.deltaTime));
-        transform.Translate(new Vector2(0f, Input.GetAxisRaw("Vertical2") * moveSpeed * Time.deltaTime));
+        transform.Rotate(new Vector3(0, 0, -Input.GetAxisRaw("Horizontal2") * GetComponent<PlayerStats>().moveSpeed * GetComponent<PlayerStats>().handling * Time.deltaTime));
+        transform.Translate(new Vector2(0f, Input.GetAxisRaw("Vertical2") * GetComponent<PlayerStats>().moveSpeed * Time.deltaTime));
         // if dead reset to start position and restor hp's //TODO: not hardcoded coords of spawn point
         if (GetComponent<PlayerStats>().health <= 0)
         {
@@ -34,7 +34,7 @@ public class Player2Controller : MonoBehaviour
                 GetComponent<PlayerStats>().hasFlag = false;
                 items[0].SetActive(true);
             }
-
+            // respawn
             transform.SetPositionAndRotation(new Vector2(3, 0), Quaternion.identity);
             GetComponent<PlayerStats>().health = 10;
             

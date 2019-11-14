@@ -6,6 +6,9 @@ public class PlayerStats : MonoBehaviour
 {
     public int health = 10;
     public bool hasFlag = false;
+    public int handling;
+    public int moveSpeed;
+    public int weapon;
 
     // Start is called before the first frame update
     void Start()

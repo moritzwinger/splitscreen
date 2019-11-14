@@ -2,23 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interaction2 : MonoBehaviour
+public class Interaction1 : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // pick up flag
-        if (collision.gameObject.name == "Flag1")
+        if (collision.gameObject.name == "Flag2")
         {
-            Debug.Log("Picked up player 1 flag");
             collision.gameObject.SetActive(false);
             gameObject.GetComponent<PlayerStats>().hasFlag = true;
             // TODO add something that shows flag on tank
         }
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         // Win the game if flag is dropped at the drop zone
-        if (collision.gameObject.tag == "Drop2" && gameObject.GetComponent<PlayerStats>().hasFlag == true)
+        if (collision.gameObject.tag == "Drop1" && gameObject.GetComponent<PlayerStats>().hasFlag == true)
         {
-            Debug.Log("Player 2 WINS");
+            FindObjectOfType<GameManager>().GameOver();
         }
     }
 }

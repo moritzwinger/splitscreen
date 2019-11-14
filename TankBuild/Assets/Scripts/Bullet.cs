@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
         // deduct hp from player that has been hit
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerStats>().health -= 5;
+            collision.gameObject.GetComponent<PlayerStats>().health -= 1;
         }
     }
 }

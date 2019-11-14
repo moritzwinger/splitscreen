@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed;
+    //public float moveSpeed;
     public GameObject[] items = new GameObject[5];
 
     // Animator anim;
@@ -21,9 +21,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // movement 
-        transform.Rotate(new Vector3(0, 0, -Input.GetAxisRaw("Horizontal") * moveSpeed * 20 * Time.deltaTime));
-        transform.Translate(new Vector2(0f, Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime));
+        // movement: upgrade via Playerstats: handling and speed
+        transform.Rotate(new Vector3(0, 0, -Input.GetAxisRaw("Horizontal") * GetComponent<PlayerStats>().moveSpeed * GetComponent<PlayerStats>().handling * Time.deltaTime));
+        transform.Translate(new Vector2(0f, Input.GetAxisRaw("Vertical") * GetComponent<PlayerStats>().moveSpeed * Time.deltaTime));
         // if dead reset to start position and restor hp's //TODO: not hardcoded coords of spawn point
         if (GetComponent<PlayerStats>().health <= 0)
         {
