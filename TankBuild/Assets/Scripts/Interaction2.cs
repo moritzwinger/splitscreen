@@ -22,6 +22,7 @@ public class Interaction2 : MonoBehaviour
         // Win the game if flag is dropped at the drop zone
         if (collision.gameObject.tag == "Drop2" && gameObject.GetComponent<PlayerStats>().hasFlag == true)
         {
+            FindObjectOfType<GameManager>().winningPlayerNo = 2;
             FindObjectOfType<GameManager>().GameOver();
         }
     }

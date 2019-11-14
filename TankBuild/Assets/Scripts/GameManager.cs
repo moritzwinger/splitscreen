@@ -6,16 +6,17 @@ public class GameManager : MonoBehaviour
 {
     bool gameHasEnded;
     public GameObject gameOverUI;
+    public int winningPlayerNo;
 
     public void GameOver()
     {
         if (!gameHasEnded)
         {
             gameHasEnded = true;
-            // display game over
-            Debug.Log("Game Over");
-            //Restart game
+ 
+            //game Over UI
             gameOverUI.SetActive(true);
+            //Restart game
             Invoke("Restart", 2f);
         }
         
