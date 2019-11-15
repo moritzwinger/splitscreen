@@ -977,11 +977,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197a4fb0e4dd8fc41a90f048b501c297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 3
   hasFlag: 0
   handling: 20
   moveSpeed: 5
   weapon: 1
+  checkpoint1: 0
 --- !u!114 &1426342758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1510,11 +1511,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197a4fb0e4dd8fc41a90f048b501c297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 3
   hasFlag: 0
   handling: 20
   moveSpeed: 5
   weapon: 1
+  checkpoint1: 0
 --- !u!114 &1754094880
 MonoBehaviour:
   m_ObjectHideFlags: 0
