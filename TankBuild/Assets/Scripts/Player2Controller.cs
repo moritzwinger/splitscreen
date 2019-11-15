@@ -28,18 +28,26 @@ public class Player2Controller : MonoBehaviour
         // if dead reset to start position and restor hp's //TODO: not hardcoded coords of spawn point
         if (GetComponent<PlayerStats>().health <= 0)
         {
-            // drop flag if applicable
+            
+            // drop flag if applicable and respawn at start for now //TODO drop where dies
             if (GetComponent<PlayerStats>().hasFlag == true)
             {
                 GetComponent<PlayerStats>().hasFlag = false;
                 items[0].SetActive(true);
             }
-            // respawn
+          
+
             transform.SetPositionAndRotation(new Vector2(3, 0), Quaternion.identity);
             GetComponent<PlayerStats>().health = 10;
+           
+            // respawn after 3 secs
+           // Invoke("Respawn", 3f);
             
 
         }
     }
-
+    void Respawn()
+    {
+      
+    }
 }
