@@ -9,6 +9,7 @@ public class PlayerStats : MonoBehaviour
     public int handling;
     public int moveSpeed;
     public int weapon;
+    public bool checkpoint1 = false;
 
     // Start is called before the first frame update
     void Start()

@@ -948,6 +948,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   moveSpeed: 3
+  pos: {x: 0, y: 0, z: 0}
 --- !u!114 &1426342756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,7 +1044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 0.36320752, b: 0.9977233, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1369,6 +1370,7 @@ MonoBehaviour:
   - {fileID: 1426342750}
   - {fileID: 0}
   - {fileID: 0}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!212 &1754094874
 SpriteRenderer:
   m_ObjectHideFlags: 0

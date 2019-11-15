@@ -11,10 +11,12 @@ public class Player2Controller : MonoBehaviour
     // Animator anim;
     SpriteRenderer render;
     Rigidbody2D rigid;
+    public Vector3 pos;
 
     // Start is called before the first frame update
     void Start()
     {
+        pos = transform.position;
         render = GetComponent<SpriteRenderer>();
         rigid = GetComponent<Rigidbody2D>();
     }
@@ -35,13 +37,11 @@ public class Player2Controller : MonoBehaviour
                 GetComponent<PlayerStats>().hasFlag = false;
                 items[0].SetActive(true);
             }
-          
-
-            transform.SetPositionAndRotation(new Vector2(3, 0), Quaternion.identity);
+            //respawn
+            transform.SetPositionAndRotation(pos, Quaternion.identity);
+            // restore health
             GetComponent<PlayerStats>().health = 10;
-           
-            // respawn after 3 secs
-           // Invoke("Respawn", 3f);
+
             
 
         }

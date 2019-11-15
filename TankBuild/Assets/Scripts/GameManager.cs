@@ -19,14 +19,29 @@ public class GameManager : MonoBehaviour
             //game Over UI
             gameOverText.GetComponent<Text>().text = "Player " + winningPlayerNo + " wins!";
             gameOverUI.SetActive(true);
-            //Restart game
-            Invoke("Restart", 2f);
+            //next level
+            Invoke("NextLevel", 2f);
         }
         
     }
 
-    void Restart()
+    public void BackToMain()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //game Over UI
+        gameOverText.GetComponent<Text>().text = "Player " + winningPlayerNo + " wins!";
+        gameOverUI.SetActive(true);
+        //back to main
+        Invoke("BackToMainMenu", 2f);
     }
+
+    void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("intro");
+    }
+
 }
